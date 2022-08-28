@@ -171,6 +171,13 @@ if(!empty($aircrafts)) {
   }
 }
 
+/**
+ * Write new previous.json file.
+ */
+echo logEcho($lang['notifier']['previousFileTruncate'], 'FILE', COLOR_FILE);
+$fp = fopen($previousFile, 'w+');
+fwrite($fp, json_encode($previous));
+fclose($fp);
 
 /**
  * Done :-)
