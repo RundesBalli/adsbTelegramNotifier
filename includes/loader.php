@@ -8,6 +8,7 @@
 /**
  * Basic configuration
  */
+require_once(__DIR__.DIRECTORY_SEPARATOR."config.php");
 
 /**
  * Locale selected in the configuration
