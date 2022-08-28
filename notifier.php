@@ -70,6 +70,21 @@ if(!file_exists($previousFile)) {
 }
 
 /**
+ * Delete all aircraft that are outside the timeout.
+ */
+if(!empty($previous)) {
+  echo logEcho(sprintf($lang['notifier']['checkTimeout'], $timeout), 'INFO', COLOR_INFO);
+  $timeoutAircrafts = 0;
+  foreach($previous AS $icao => $time) {
+    if($time <= (time()-$timeout)) {
+      $timeoutAircrafts++;
+      unset($previous[$icao]);
+      echo logEcho(sprintf($lang['notifier']['deleteAircraft'], $icao, date('d.m.Y, H:i:s', $time)), 'OK', COLOR_OK);
+    }
+  }
+}
+
+/**
  * Check if the radius in the configuration file was entered in kilometers or nautical miles.
  * If the value was entered in kilometers, it must be converted to nautical miles, since readsb gives
  * distances in nautical miles.
