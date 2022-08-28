@@ -11,6 +11,7 @@
 $lang['exiting'] = "Beende...";
 $lang['sendMessage']['ok'] = "Senden erfolgreich.";
 $lang['sendMessage']['failed'] = "Senden fehlgeschlagen.";
+$lang['done'] = "Fertig.";
 
 /**
  * includes/functions/checkVersion.php
