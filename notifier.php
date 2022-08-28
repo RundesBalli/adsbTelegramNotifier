@@ -30,8 +30,8 @@ openingArt();
 echo logEcho($lang['notifier']['checkConfigVersion'], 'INFO', COLOR_INFO);
 if($configVersion < MIN_CONFIG_VERSION) {
   sendMessageToTelegram(EMOJI_WARN.' '.$lang['notifier']['updateConfig']);
-  echo logEcho($lang['notifier']['updateConfig'], 'WARN', COLOR_WARN);
-  echo logEcho($lang['exiting'], 'WARN', COLOR_WARN);
+  echo logEcho($lang['notifier']['updateConfig'], 'CRIT', COLOR_CRIT);
+  echo logEcho($lang['exiting'], 'CRIT', COLOR_CRIT);
   die();
 }
 echo logEcho($lang['notifier']['checkConfigVersionDone'], 'OK', COLOR_OK);

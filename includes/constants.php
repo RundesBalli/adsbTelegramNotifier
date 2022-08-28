@@ -24,6 +24,7 @@ const EMOJI_WARN = "\xE2\x9A\xA0";
  * Colors (Terminal)
  */
 const COLOR_WARN = "\e[38;5;1m";
+const COLOR_CRIT = "\e[38;5;15m\e[48;5;1m";
 const COLOR_OPENING = "\e[38;5;6m";
 const COLOR_FILE = "\e[38;5;6m";
 const COLOR_INFO = "\e[38;5;3m";
