@@ -34,7 +34,7 @@ if($configVersion < MIN_CONFIG_VERSION) {
   echo logEcho($lang['exiting'], 'WARN', COLOR_WARN);
   die();
 }
-echo logEcho($lang['notifier']['checkConfigVersionDone'], 'INFO', COLOR_INFO);
+echo logEcho($lang['notifier']['checkConfigVersionDone'], 'OK', COLOR_OK);
 
 /**
  * Check version
