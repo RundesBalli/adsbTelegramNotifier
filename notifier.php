@@ -171,3 +171,9 @@ if(!empty($aircrafts)) {
   }
 }
 
+
+/**
+ * Done :-)
+ */
+echo logEcho($lang['done'], 'OK', COLOR_OK);
+?>
