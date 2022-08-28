@@ -24,4 +24,10 @@ $lang['notifier']['checkConfigVersion'] = "Überprüfe Konfigurationsversion.";
 $lang['notifier']['updateConfig'] = "Die Konfigurationsdatei muss aktualisiert werden. Verwende die aktuelle Konfigurationsdatei aus dem Repository als Grundlage.";
 $lang['notifier']['checkConfigVersionDone'] = "Konfigurationsversion OK.";
 $lang['notifier']['checkUpdateAvailable'] = "Prüfung auf Aktualisierungen.";
+$lang['notifier']['previousFile'] = "Datei mit vorher gesehenen Flugzeugen: %s";
+$lang['notifier']['previousFileNotExists'] = "Existiert noch nicht. Wird später erstellt.";
+$lang['notifier']['previousFileEmpty'] = "Datei ist leer. Wird gelöscht und später neu erstellt.";
+$lang['notifier']['previousFileReadFailed'] = "Dateiinhalt ungültig. Datei gelöscht.";
+$lang['notifier']['previousFileRead'] = "Datei gelesen.";
+
 ?>
