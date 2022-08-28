@@ -35,4 +35,11 @@ $lang['notifier']['previousFileRead'] = "Datei gelesen.";
 $lang['notifier']['checkTimeout'] = "Prüfung ob Flugzeuge außerhalb des gesetzten Timeouts (%d Sekunden) liegen.";
 $lang['notifier']['deleteAircraft'] = "%s entfernt, zuletzt gesehen am: %s";
 
+$lang['notifier']['aircraftJsonFile'] = "Datei mit aktuellen Flugzeugen vom Decoder: %s";
+$lang['notifier']['aircraftJsonFileNotExists'] = "Decoder Daten nicht auffindbar. Pfad und Betrieb des Decoders prüfen!";
+$lang['notifier']['aircraftJsonDataFailed'] = "Decoder Daten fehlerhaft!";
+$lang['notifier']['aircraftOutOfRange'] = "%s außerhalb vom Überwachungsradius.";
+$lang['notifier']['aircraftUpdated'] = "%s bereits gesehen, Zeitpunkt der letzten Sichtung aktualisiert.";
+$lang['notifier']['newAircraft'] = "%s neu im Überwachungsradius, wird benachrichtigt.";
+
 ?>

@@ -97,3 +97,77 @@ if($useMetric !== FALSE) {
   $radius = $radius*0.539956803;
 }
 
+/**
+ * Read the contents from the current decoder output.
+ */
+echo logEcho(sprintf($lang['notifier']['aircraftJsonFile'], $aircraftJsonFile), 'FILE', COLOR_FILE);
+if(!file_exists($aircraftJsonFile)) {
+  echo logEcho($lang['notifier']['aircraftJsonFileNotExists'], 'CRIT', COLOR_CRIT);
+  if(sendMessageToTelegram(EMOJI_WARN.' '.$lang['notifier']['aircraftJsonFileNotExists'])) {
+    echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+  } else {
+    echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+  }
+  echo logEcho($lang['exiting'], 'CRIT', COLOR_CRIT);
+  die();
+}
+$fp = fopen($aircraftJsonFile, 'r');
+$aircrafts = json_decode(fread($fp, filesize($aircraftJsonFile)), TRUE);
+fclose($fp);
+
+/**
+ * If the decoder output is no array, the script will exit.
+ */
+if(!is_array($aircrafts)) {
+  echo logEcho($lang['notifier']['aircraftJsonDataFailed'], 'CRIT', COLOR_CRIT);
+  if(sendMessageToTelegram(EMOJI_WARN.' '.$lang['notifier']['aircraftJsonDataFailed'])) {
+    echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+  } else {
+    echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+  }
+  echo logEcho($lang['exiting'], 'CRIT', COLOR_CRIT);
+  die();
+}
+
+/**
+ * Check if the decoder output is empty or not.
+ */
+if(!empty($aircrafts)) {
+  $aircrafts = $aircrafts['aircraft'];
+  /**
+   * Iterate through the decoder data.
+   */
+  foreach($aircrafts as $aircraft) {
+    /**
+     * Check if the distance from the aircraft to the station is within the configured radius.
+     */
+    if(empty($aircraft['r_dst']) OR (!is_numeric($aircraft['r_dst']) OR $aircraft['r_dst'] > $radius)) {
+      echo logEcho(sprintf($lang['notifier']['aircraftOutOfRange'], $aircraft['hex']), 'INFO', COLOR_INFO);
+      continue;
+    }
+
+    /**
+     * Check if the aircraft was seen before.
+     */
+    if(array_key_exists($aircraft['hex'], $previous)) {
+      /**
+       * Aircraft has been seen within the defined timeout time and does not need to be notified again. The
+       * time of the last sighting is updated.
+       */
+      echo logEcho(sprintf($lang['notifier']['aircraftUpdated'], $aircraft['hex']), 'OK', COLOR_OK);
+    } else {
+      /**
+       * Aircraft is new within the observation radius.
+       */
+      echo logEcho(sprintf($lang['notifier']['newAircraft'], $aircraft['hex']), 'OK', COLOR_OK);
+      if(sendMessageToTelegram()) {
+        echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+      } else {
+        echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+      }
+    }
+    $previous[$aircraft['hex']] = time();
+    continue;
+  }
+}
+
