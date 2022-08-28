@@ -24,3 +24,21 @@ require_once(__DIR__.DIRECTORY_SEPARATOR."includes".DIRECTORY_SEPARATOR."loader.
 echo CLEAR_SCREEN;
 openingArt();
 
+/**
+ * Check config version
+ */
+echo logEcho($lang['notifier']['checkConfigVersion'], 'INFO', COLOR_INFO);
+if($configVersion < MIN_CONFIG_VERSION) {
+  sendMessageToTelegram(EMOJI_WARN.' '.$lang['notifier']['updateConfig']);
+  echo logEcho($lang['notifier']['updateConfig'], 'WARN', COLOR_WARN);
+  echo logEcho($lang['exiting'], 'WARN', COLOR_WARN);
+  die();
+}
+echo logEcho($lang['notifier']['checkConfigVersionDone'], 'INFO', COLOR_INFO);
+
+/**
+ * Check version
+ */
+echo logEcho($lang['notifier']['checkUpdateAvailable'], 'INFO', COLOR_INFO);
+checkVersion();
+
