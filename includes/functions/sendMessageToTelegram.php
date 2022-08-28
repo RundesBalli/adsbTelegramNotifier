@@ -10,7 +10,7 @@
  * 
  * @return boolean TRUE in case of success, FALSE in case of error.
  */
-function sendMessageToTelegram($text = NULL) {
+function sendMessageToTelegram(string $text) {
   /**
    * Exit function call when text is empty or not provided.
    */

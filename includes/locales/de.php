@@ -23,11 +23,13 @@ $lang['checkVersion']['versionOk'] = "Version aktuell.";
 /**
  * notifier.php
  */
+// Versioncheck
 $lang['notifier']['checkConfigVersion'] = "Überprüfe Konfigurationsversion.";
 $lang['notifier']['updateConfig'] = "Die Konfigurationsdatei muss aktualisiert werden. Verwende die aktuelle Konfigurationsdatei aus dem Repository als Grundlage.";
 $lang['notifier']['checkConfigVersionDone'] = "Konfigurationsversion OK.";
 $lang['notifier']['checkUpdateAvailable'] = "Prüfung auf Aktualisierungen.";
 
+// previous.json file handling
 $lang['notifier']['previousFile'] = "Datei mit vorher gesehenen Flugzeugen: %s";
 $lang['notifier']['previousFileNotExists'] = "Existiert noch nicht. Wird später erstellt.";
 $lang['notifier']['previousFileEmpty'] = "Datei ist leer. Wird gelöscht und später neu erstellt.";
@@ -39,6 +41,7 @@ $lang['notifier']['deleteAircraftCount'] = "%d Flugzeuge entfernt.";
 $lang['notifier']['noDeletedAircrafts'] = "Keine Flugzeuge entfernt.";
 $lang['notifier']['previousFileTruncate'] = "Datei mit gesehenen Flugzeugen wird aktualisiert.";
 
+// aircraft.json file handling
 $lang['notifier']['aircraftJsonFile'] = "Datei mit aktuellen Flugzeugen vom Decoder: %s";
 $lang['notifier']['aircraftJsonFileNotExists'] = "Decoder Daten nicht auffindbar. Pfad und Betrieb des Decoders prüfen!";
 $lang['notifier']['aircraftJsonDataFailed'] = "Decoder Daten fehlerhaft!";
