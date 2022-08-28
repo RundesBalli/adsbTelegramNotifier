@@ -35,6 +35,8 @@ $lang['notifier']['previousFileReadFailed'] = "Dateiinhalt ungültig. Datei gel�
 $lang['notifier']['previousFileRead'] = "Datei gelesen.";
 $lang['notifier']['checkTimeout'] = "Prüfung ob Flugzeuge außerhalb des gesetzten Timeouts (%d Sekunden) liegen.";
 $lang['notifier']['deleteAircraft'] = "%s entfernt, zuletzt gesehen am: %s";
+$lang['notifier']['deleteAircraftCount'] = "%d Flugzeuge entfernt.";
+$lang['notifier']['noDeletedAircrafts'] = "Keine Flugzeuge entfernt.";
 $lang['notifier']['previousFileTruncate'] = "Datei mit gesehenen Flugzeugen wird aktualisiert.";
 
 $lang['notifier']['aircraftJsonFile'] = "Datei mit aktuellen Flugzeugen vom Decoder: %s";

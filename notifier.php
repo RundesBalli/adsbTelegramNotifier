@@ -86,6 +86,11 @@ if(!empty($previous)) {
       echo logEcho(sprintf($lang['notifier']['deleteAircraft'], $icao, date('d.m.Y, H:i:s', $time)), 'OK', COLOR_OK);
     }
   }
+  if($timeoutAircrafts > 0) {
+    echo logEcho(sprintf($lang['notifier']['deleteAircraftCount'], $timeoutAircrafts), 'INFO', COLOR_INFO);
+  } else {
+    echo logEcho($lang['notifier']['noDeletedAircrafts'], 'INFO', COLOR_INFO);
+  }
 }
 
 /**
