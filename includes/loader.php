@@ -22,4 +22,5 @@ require_once(__DIR__.DIRECTORY_SEPARATOR."locales".DIRECTORY_SEPARATOR.$locale."
  */
 require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."logEcho.php");
 require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."openingArt.php");
+require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."sendMessageToTelegram.php");
 ?>
