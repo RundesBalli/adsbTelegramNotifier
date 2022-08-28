@@ -42,3 +42,12 @@ echo logEcho($lang['notifier']['checkConfigVersionDone'], 'INFO', COLOR_INFO);
 echo logEcho($lang['notifier']['checkUpdateAvailable'], 'INFO', COLOR_INFO);
 checkVersion();
 
+/**
+ * Check if the radius in the configuration file was entered in kilometers or nautical miles.
+ * If the value was entered in kilometers, it must be converted to nautical miles, since readsb gives
+ * distances in nautical miles.
+ */
+if($useMetric !== FALSE) {
+  $radius = $radius*0.539956803;
+}
+
