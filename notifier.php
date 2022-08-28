@@ -43,7 +43,7 @@ echo logEcho($lang['notifier']['checkUpdateAvailable'], 'INFO', COLOR_INFO);
 checkVersion();
 
 /**
- * Read the previous reported aircraft file.
+ * Read the previous seen aircraft file.
  */
 $previousFile = __DIR__.DIRECTORY_SEPARATOR.'previous.json';
 echo logEcho(sprintf($lang['notifier']['previousFile'], $previousFile), 'FILE', COLOR_FILE);
