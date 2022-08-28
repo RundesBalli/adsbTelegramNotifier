@@ -18,3 +18,9 @@ require_once(__DIR__.DIRECTORY_SEPARATOR."includes".DIRECTORY_SEPARATOR."loader.
  * This script always runs in verbose mode. Therefore its output has to be discarded when using cron.
  */
 
+/**
+ * Clear screen and show opening ascii art.
+ */
+echo CLEAR_SCREEN;
+openingArt();
+

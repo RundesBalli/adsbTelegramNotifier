@@ -21,4 +21,5 @@ require_once(__DIR__.DIRECTORY_SEPARATOR."locales".DIRECTORY_SEPARATOR.$locale."
  * Functions
  */
 require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."logEcho.php");
+require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."openingArt.php");
 ?>
