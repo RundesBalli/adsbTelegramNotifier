@@ -9,6 +9,8 @@
  * Global
  */
 $lang['exiting'] = "Beende...";
+$lang['sendMessage']['ok'] = "Senden erfolgreich.";
+$lang['sendMessage']['failed'] = "Senden fehlgeschlagen.";
 
 /**
  * includes/functions/checkVersion.php

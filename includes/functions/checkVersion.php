@@ -42,8 +42,12 @@ function checkVersion() {
    * Error handling.
    */
   if(curl_errno($ch) != 0 OR curl_getinfo($ch, CURLINFO_RESPONSE_CODE) != 200) {
-    sendMessageToTelegram(EMOJI_WARN.' '.$lang['checkVersion']['error']);
     echo logEcho($lang['checkVersion']['error'], 'WARN', COLOR_WARN);
+    if(sendMessageToTelegram(EMOJI_WARN.' '.$lang['checkVersion']['error'])) {
+      echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+    } else {
+      echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+    }
     return;
   }
 
@@ -71,8 +75,12 @@ function checkVersion() {
       /**
        * The user has not been notified so far.
        */
-      sendMessageToTelegram(EMOJI_INFO.' '.$lang['checkVersion']['updateAvailable']);
       echo logEcho($lang['checkVersion']['updateAvailable'], 'INFO', COLOR_INFO);
+      if(sendMessageToTelegram(EMOJI_INFO.' '.$lang['checkVersion']['updateAvailable'])) {
+        echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+      } else {
+        echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+      }
       return;
     }
   } elseif(file_exists($notifyFile)) {
