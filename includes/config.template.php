@@ -51,6 +51,15 @@ $locale = "de";
  */
 $aircraftJsonFile = "/run/readsb/aircraft.json";
 
+/**
+ * Link to tar1090
+ * 
+ * Link to tar1090 or other map services with ICAO hex selection without last forward slash.
+ * e.g. http://your-decoder-ip/tar1090 or https://globe.adsbexchange.com
+ * 
+ * @var string
+ */
+$linkToTar1090 = "https://bratwurst.rundesballi.com/tar1090";
 
 /**
  * Use planespotters.net API for photographs.
