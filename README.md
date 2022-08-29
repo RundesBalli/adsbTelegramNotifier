@@ -30,3 +30,16 @@ nano includes/config.php
 `* * * * * /usr/bin/php /path/to/your/notifier.php >/dev/null 2>&1`  
 Don't forget to edit the path and to add a new line at the end of the crontab. Make sure, that you have the `>/dev/null 2>&1` at the end of the line, or the script will spam your systemlog.
 3. If you don't want to get notifications every minute around the clock, you can simply edit the crontab times with the [crontab generator](https://crontab-generator.org/). If you only want notifications between 5 and 16 o'clock (5am to 4pm) and only Monday to Friday, you can use `* 5-16 * * 1-5`
+
+## More information (readsb/tar1090 only)
+The default setup shows the HEX Code (ICAO) and the Flightnumber/Callsign if available.  
+If you want to know more information about the aircraft (registration and aircraft-type) you can add more data to the `aircraft.json`.  
+As seen in [wiedehopfs tutorial](https://github.com/wiedehopf/tar1090#0800-destroy-sd-card) you can download a `aircraft.csv` file and include it into readsb to get more data.  
+```shell
+sudo wget -O /usr/local/share/tar1090/aircraft.csv.gz https://github.com/wiedehopf/tar1090-db/raw/csv/aircraft.csv.gz
+sudo nano /etc/default/readsb
+```
+Add the following line in one of the readsb parameter lines:  
+`--db-file /usr/local/share/tar1090/aircraft.csv.gz --db-file-lt`  
+Restart readsb:  
+`sudo systemctl restart readsb`

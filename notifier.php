@@ -168,11 +168,14 @@ if(!empty($aircrafts)) {
        * time of the last sighting is updated.
        */
       echo logEcho(sprintf($lang['notifier']['aircraftUpdated'], $aircraft['hex']), 'OK', COLOR_OK);
+      $previous[$aircraft['hex']] = time();
+      continue;
     } else {
       /**
        * Aircraft is new within the observation radius.
        */
       echo logEcho(sprintf($lang['notifier']['newAircraft'], $aircraft['hex']), 'OK', COLOR_OK);
+      $previous[$aircraft['hex']] = time();
 
       /**
        * Prepare text
@@ -182,6 +185,18 @@ if(!empty($aircrafts)) {
       if(!empty($aircraft['flight'])) {
         $text.= sprintf($lang['notifier']['aircraftFlight'], trim($aircraft['flight']));
       }
+
+      /**
+       * The following data 'r' (registration) and 'desc' (long description of the aircraft) are only
+       * available, if the readsb decoder has the db-file included (see ReadMe).
+       */
+      if(!empty($aircraft['r'])) {
+        $text.= sprintf($lang['notifier']['aircraftRegistration'], trim($aircraft['r']));
+      }
+      if(!empty($aircraft['desc'])) {
+        $text.= sprintf($lang['notifier']['aircraftDesc'], trim($aircraft['desc']));
+      }
+      
       /**
        * Check if planespotters picture is requested.
        */
@@ -197,7 +212,6 @@ if(!empty($aircrafts)) {
            */
           if(sendPhotoToTelegram($text.$textPhoto, $photo['url'])) {
             echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
-            $previous[$aircraft['hex']] = time();
             continue;
           } else {
             echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
@@ -208,7 +222,7 @@ if(!empty($aircrafts)) {
       }
 
       /**
-       * Send prepared text
+       * Send prepared text if no planespotters picture is requested or available.
        */
       if(sendMessageToTelegram($text)) {
         echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
@@ -216,8 +230,6 @@ if(!empty($aircrafts)) {
         echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
       }
     }
-    $previous[$aircraft['hex']] = time();
-    continue;
   }
 }
 

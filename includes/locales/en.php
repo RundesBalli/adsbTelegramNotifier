@@ -59,5 +59,7 @@ $lang['notifier']['planespottersApiCallFailed'] = "Photo request failed.";
 $lang['notifier']['newAircraftTelegram'] = EMOJI_AIRCRAFT." *New aircraft spotted!*\n\n";
 $lang['notifier']['aircraftLink'] = "Hex: [%s](".$linkToTar1090."/?icao=%s)\n";
 $lang['notifier']['aircraftFlight'] = "Flight: %s\n";
+$lang['notifier']['aircraftRegistration'] = "Registration: %s\n";
+$lang['notifier']['aircraftDesc'] = "Aircraft: %s\n";
 $lang['notifier']['planespottersNote'] = "\n[Photo](%s) by %s";
 ?>
