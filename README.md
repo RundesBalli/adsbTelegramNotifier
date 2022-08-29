@@ -11,7 +11,7 @@ Go to the directory where you want to install the notifier, clone Repository, re
 cd ~
 git clone https://github.com/RundesBalli/adsbTelegramNotifier.git
 cd adsbTelegramNotifier
-mv config.template.php config.php
+mv includes/config.template.php includes/config.php
 nano config.php
 ```
 
