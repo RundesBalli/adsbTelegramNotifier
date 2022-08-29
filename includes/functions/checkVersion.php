@@ -59,11 +59,11 @@ function checkVersion() {
   /**
    * Read local version file and check if the version number provided by GitHub is different.
    */
-  $versionFile = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.'version.txt';
+  $versionFile = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.'/version.txt';
   $fp = fopen($versionFile, 'r');
   $version = fread($fp, filesize($versionFile));
   fclose($fp);
-  $notifyFile = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.'UPDATE_AVAILABLE';
+  $notifyFile = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.'/UPDATE_AVAILABLE';
   if($version != $response) {
     /**
      * Versions are different.
