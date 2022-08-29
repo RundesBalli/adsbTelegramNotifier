@@ -59,7 +59,7 @@ $aircraftJsonFile = "/run/readsb/aircraft.json";
  * 
  * @var string
  */
-$linkToTar1090 = "https://bratwurst.rundesballi.com/tar1090";
+$linkToTar1090 = "https://globe.adsbexchange.com";
 
 /**
  * Use planespotters.net API for photographs.
