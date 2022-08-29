@@ -60,6 +60,6 @@ $lang['notifier']['newAircraftTelegram'] = EMOJI_AIRCRAFT." *Neues Flugzeug gesi
 $lang['notifier']['aircraftLink'] = "Hex: [%s](".$linkToTar1090."/?icao=%s)\n";
 $lang['notifier']['aircraftFlight'] = "Flug: `%s`\n";
 $lang['notifier']['aircraftRegistration'] = "Registrierung: `%s`\n";
-$lang['notifier']['aircraftDesc'] = "\nFlugzeug: `%s`\n";
+$lang['notifier']['aircraftDesc'] = "\nFlugzeug:\n`%s`\n";
 $lang['notifier']['planespottersNote'] = "\n[Foto](%s) von %s";
 ?>
