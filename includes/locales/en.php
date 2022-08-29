@@ -45,6 +45,7 @@ $lang['notifier']['previousFileTruncate'] = "File with seen aircraft is updated.
 $lang['notifier']['aircraftJsonFile'] = "File with current aircrafts from decoder: %s";
 $lang['notifier']['aircraftJsonFileNotExists'] = "Decoder data cannot be found. Check path and operation state of the decoder!";
 $lang['notifier']['aircraftJsonDataFailed'] = "Decoder data corrupted!";
+$lang['notifier']['aircraftWrongDataSource'] = "%s comes from an unwanted data source.";
 $lang['notifier']['aircraftOutOfRange'] = "%s outside the monitoring radius.";
 $lang['notifier']['aircraftUpdated'] = "%s already seen, time of last sighting updated.";
 $lang['notifier']['newAircraft'] = "%s new in the monitoring radius, will be notified.";

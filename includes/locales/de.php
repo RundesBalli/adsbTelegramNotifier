@@ -45,6 +45,7 @@ $lang['notifier']['previousFileTruncate'] = "Datei mit gesehenen Flugzeugen wird
 $lang['notifier']['aircraftJsonFile'] = "Datei mit aktuellen Flugzeugen vom Decoder: %s";
 $lang['notifier']['aircraftJsonFileNotExists'] = "Decoder Daten nicht auffindbar. Pfad und Betrieb des Decoders prüfen!";
 $lang['notifier']['aircraftJsonDataFailed'] = "Decoder Daten fehlerhaft!";
+$lang['notifier']['aircraftWrongDataSource'] = "%s kommt von einer unerwünschten Datenquelle.";
 $lang['notifier']['aircraftOutOfRange'] = "%s außerhalb vom Überwachungsradius.";
 $lang['notifier']['aircraftUpdated'] = "%s bereits gesehen, Zeitpunkt der letzten Sichtung aktualisiert.";
 $lang['notifier']['newAircraft'] = "%s neu im Überwachungsradius, wird benachrichtigt.";

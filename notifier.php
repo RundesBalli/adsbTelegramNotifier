@@ -144,6 +144,14 @@ if(!empty($aircrafts)) {
    */
   foreach($aircrafts as $aircraft) {
     /**
+     * Check if the datasource from the aircraft is in the configured array.
+     */
+    if(array_search('all', $dataSources) === FALSE AND array_search($aircraft['type'], $dataSources) === FALSE) {
+      echo logEcho(sprintf($lang['notifier']['aircraftWrongDataSource'], $aircraft['hex']), 'INFO', COLOR_INFO);
+      continue;
+    }
+
+    /**
      * Check if the distance from the aircraft to the station is within the configured radius.
      */
     if(empty($aircraft['r_dst']) OR (!is_numeric($aircraft['r_dst']) OR $aircraft['r_dst'] > $radius)) {
