@@ -12,7 +12,7 @@ cd ~
 git clone https://github.com/RundesBalli/adsbTelegramNotifier.git
 cd adsbTelegramNotifier
 mv includes/config.template.php includes/config.php
-nano config.php
+nano includes/config.php
 ```
 
 ## Telegram Bot
