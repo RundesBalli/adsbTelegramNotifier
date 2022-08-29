@@ -19,6 +19,14 @@ function checkVersion() {
   global $lang;
 
   /**
+   * Only check for updates 4 times a hour, to reduce the amount of requests to GitHub.
+   */
+  if(!in_array(intval(date('i', time())), [0, 15, 30, 45])) {
+    echo logEcho($lang['checkVersion']['skipped'], 'INFO', COLOR_INFO);
+    return;
+  }
+
+  /**
    * Open cURL handle, prepare and set options.
    */
   $ch = curl_init();

@@ -16,6 +16,7 @@ $lang['done'] = "Done.";
 /**
  * includes/functions/checkVersion.php
  */
+$lang['checkVersion']['skipped'] = "Check for updates skipped. Will be checked only every 15 minutes!";
 $lang['checkVersion']['error'] = "Update check failed!";
 $lang['checkVersion']['updateAvailable'] = "An update is available!\n\nNavigate to the directory of the notifier in the terminal and execute `git pull` to perform an update.";
 $lang['checkVersion']['versionOk'] = "Version up to date.";

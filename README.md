@@ -30,6 +30,7 @@ nano includes/config.php
 `* * * * * /usr/bin/php /path/to/your/notifier.php >/dev/null 2>&1`  
 Don't forget to edit the path and to add a new line at the end of the crontab. Make sure, that you have the `>/dev/null 2>&1` at the end of the line, or the script will spam your systemlog.
 3. If you don't want to get notifications every minute around the clock, you can simply edit the crontab times with the [crontab generator](https://crontab-generator.org/). If you only want notifications between 5 and 16 o'clock (5am to 4pm) and only Monday to Friday, you can use `* 5-16 * * 1-5`
+4. Note: The update check is only executed every 15 minutes (0, 15, 30, 45)! So if you dont execute the notifier every minute, you have to check for updates yourself!
 
 ## More information (readsb/tar1090 only)
 The default setup shows the HEX Code (ICAO) and the Flightnumber/Callsign if available.  
