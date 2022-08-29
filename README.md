@@ -2,6 +2,9 @@
 Notifies via Telegram when an aircraft passes over a certain area.  
 The script gets the data from an existing readsb or dump1090 installation (`aircraft.json`).
 
+<img src="/screenshot.png" alt="Telegram message">  
+<sub><a href="https://www.planespotters.net/photo/1304779/9m-mub-malaysia-airlines-airbus-a330-223f" title="Photo Source">Photo Source</a></sub>
+
 ## Dependencies
 Install the dependencies via:  
 `sudo apt install curl php-cli php-json php-curl -y`  
