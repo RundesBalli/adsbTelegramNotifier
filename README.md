@@ -45,5 +45,15 @@ sudo nano /etc/default/readsb
 ```
 Add the following line in one of the readsb parameter lines:  
 `--db-file /usr/local/share/tar1090/aircraft.csv.gz --db-file-lt`  
+
+For example:
+```
+DECODER_OPTIONS="--max-range 450 --write-json-every 1"
+```
+becomes:  
+```
+DECODER_OPTIONS="--max-range 450 --write-json-every 1 --db-file /usr/local/share/tar1090/aircraft.csv.gz --db-file-lt"
+```
+
 Restart readsb:  
 `sudo systemctl restart readsb`
