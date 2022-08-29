@@ -1,9 +1,11 @@
 # adsbTelegramNotifier
-Notifies via Telegram when an aircraft passes over a certain area.
+Notifies via Telegram when an aircraft passes over a certain area.  
+The script gets the data from an existing readsb or dump1090 installation (`aircraft.json`).
 
 ## Dependencies
 Install the dependencies via:  
-`sudo apt install curl php-cli php-json php-curl -y`
+`sudo apt install curl php-cli php-json php-curl -y`  
+You also need a decoder instance, such as [readsb](https://github.com/wiedehopf/adsb-wiki/wiki/Raspbian-Lite%3A-ADS-B-receiver) or dump1090.
 
 ## Install
 Go to the directory where you want to install the notifier, clone Repository, rename `config.template.php` to `config.php` and edit the config file.
