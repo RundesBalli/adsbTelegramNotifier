@@ -51,6 +51,14 @@ $locale = "de";
  */
 $aircraftJsonFile = "/run/readsb/aircraft.json";
 
+
+/**
+ * Use planespotters.net API for photographs.
+ * 
+ * @var bool
+ */
+$planespotters = TRUE;
+
 /**
  * Use Metric
  * 
