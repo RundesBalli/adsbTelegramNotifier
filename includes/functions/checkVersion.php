@@ -92,6 +92,12 @@ function checkVersion() {
       }
       return;
     }
+
+    /**
+     * Notify the user additionally after the messages.
+     */
+    global $updateAvailable;
+    $updateAvailable = TRUE;
   } elseif(file_exists($notifyFile)) {
     unlink($notifyFile);
   }
