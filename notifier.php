@@ -165,7 +165,44 @@ if(!empty($aircrafts)) {
        * Aircraft is new within the observation radius.
        */
       echo logEcho(sprintf($lang['notifier']['newAircraft'], $aircraft['hex']), 'OK', COLOR_OK);
-      if(sendMessageToTelegram()) {
+
+      /**
+       * Prepare text
+       */
+      $text = sprintf($lang['notifier']['newAircraftTelegram'], $aircraft['hex']);
+      $text.= sprintf($lang['notifier']['aircraftLink'], $aircraft['hex'], $aircraft['hex']);
+      if(!empty($aircraft['flight'])) {
+        $text.= sprintf($lang['notifier']['aircraftFlight'], trim($aircraft['flight']));
+      }
+      /**
+       * Check if planespotters picture is requested.
+       */
+      if($planespotters == TRUE) {
+        echo logEcho($lang['notifier']['planespottersApiCall'], 'INFO', COLOR_INFO);
+        $photo = getPlanespottersPhoto($aircraft['hex']);
+        if($photo != FALSE AND is_array($photo)) {
+          echo logEcho($lang['notifier']['planespottersApiCallSuccessful'], 'OK', COLOR_OK);
+          $textPhoto = sprintf($lang['notifier']['planespottersNote'], $photo['linkToPhoto'], $photo['author']);
+
+          /**
+           * Send prepared text with photograph.
+           */
+          if(sendPhotoToTelegram($text.$textPhoto, $photo['url'])) {
+            echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+            $previous[$aircraft['hex']] = time();
+            continue;
+          } else {
+            echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+          }
+        } else {
+          echo logEcho($lang['notifier']['planespottersApiCallFailed'], 'WARN', COLOR_WARN);
+        }
+      }
+
+      /**
+       * Send prepared text
+       */
+      if(sendMessageToTelegram($text)) {
         echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
       } else {
         echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
