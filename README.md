@@ -37,7 +37,7 @@ Don't forget to edit the path and to add a new line at the end of the crontab. M
 
 ## More information (readsb/tar1090 only)
 The default setup shows the HEX Code (ICAO) and the Flightnumber/Callsign if available.  
-If you want to know more information about the aircraft (registration and aircraft-type) you can add more data to the `aircraft.json`.  
+If you want to know more information about the aircraft (registration, aircraft-type, dbFlags) you can add more data to the `aircraft.json`.  
 As seen in [wiedehopfs tutorial](https://github.com/wiedehopf/tar1090#0800-destroy-sd-card) you can download a `aircraft.csv` file and include it into readsb to get more data.  
 ```shell
 sudo wget -O /usr/local/share/tar1090/aircraft.csv.gz https://github.com/wiedehopf/tar1090-db/raw/csv/aircraft.csv.gz

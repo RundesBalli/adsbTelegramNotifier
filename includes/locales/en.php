@@ -49,6 +49,7 @@ $lang['notifier']['aircraftJsonDataFailed'] = "Decoder data corrupted!";
 $lang['notifier']['aircraftWrongDataSource'] = "%s comes from an unwanted data source.";
 $lang['notifier']['aircraftOutOfRange'] = "%s outside the monitoring radius.";
 $lang['notifier']['aircraftUpdated'] = "%s already seen, time of last sighting updated.";
+$lang['notifier']['aircraftWrongDbFlag'] = "%s has an unwanted dbFlag.";
 $lang['notifier']['newAircraft'] = "%s new in the monitoring radius, will be notified.";
 
 // Planespotters API
@@ -62,5 +63,6 @@ $lang['notifier']['aircraftLink'] = "Hex: [%s](".$linkToTar1090."/?icao=%s)\n";
 $lang['notifier']['aircraftFlight'] = "Flight: `%s`\n";
 $lang['notifier']['aircraftRegistration'] = "Registration: `%s`\n";
 $lang['notifier']['aircraftDesc'] = "\nAircraft:\n`%s`\n";
+$lang['notifier']['aircraftDbFlag'] = "\ndbFlag: `%s`\n";
 $lang['notifier']['planespottersNote'] = "\n[Photo](%s) by %s";
 ?>

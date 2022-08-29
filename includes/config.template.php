@@ -100,7 +100,7 @@ $minAlt = 0;
 /**
  * Data sources
  * 
- * Only data from these data sources are used.
+ * Only data from these data sources is used.
  * e.g. adsb_icao, mode_s, mlat
  * Or use all to use all data sources.
  * 
@@ -108,6 +108,32 @@ $minAlt = 0;
  */
 $dataSources = [
   'all'
+];
+
+/**
+ * dbFlags
+ * 
+ * Only data with these dbFlags is used.
+ * 0: All non military and non special flights.
+ * 1: Military
+ * 2: Interesting
+ * 4: PIA
+ * 8: LADD
+ * 
+ * Note: This data selection is only available, if the readsb decoder has the db-file included (see ReadMe).
+ * 
+ * @see https://github.com/wiedehopf/readsb/blob/dev/README-json.md
+ * @see https://nbaa.org/aircraft-operations/security/privacy/privacy-icao-address-pia/
+ * @see https://nbaa.org/aircraft-operations/security/privacy/limiting-aircraft-data-displayed-ladd/
+ * 
+ * @var array
+ */
+$dbFlags = [
+  0,
+  1,
+  2,
+  4,
+  8
 ];
 
 /**
@@ -177,5 +203,5 @@ $networkInterface = "";
  * 
  * @var int
  */
-$configVersion = 1;
+$configVersion = 2;
 ?>

@@ -174,8 +174,6 @@ if(!empty($aircrafts)) {
       /**
        * Aircraft is new within the observation radius.
        */
-      echo logEcho(sprintf($lang['notifier']['newAircraft'], $aircraft['hex']), 'OK', COLOR_OK);
-      $previous[$aircraft['hex']] = time();
 
       /**
        * Prepare text
@@ -187,15 +185,33 @@ if(!empty($aircrafts)) {
       }
 
       /**
-       * The following data 'r' (registration) and 'desc' (long description of the aircraft) are only
+       * The following data 'r' (registration) and 'desc' (long description of the aircraft) is only
        * available, if the readsb decoder has the db-file included (see ReadMe).
        */
       if(!empty($aircraft['r'])) {
         $text.= sprintf($lang['notifier']['aircraftRegistration'], trim($aircraft['r']));
+        if(!empty($aircraft['desc'])) {
+          $text.= sprintf($lang['notifier']['aircraftDesc'], trim($aircraft['desc']));
+        }
+
+        /**
+         * If the registration is available, the aircraft.csv is included and therefore the dbFlags field is
+         * available on special flights.
+         */
+        $currentDbFlag = (empty($aircraft['dbFlags']) ? 0 : intval($aircraft['dbFlags']));
+        if(!in_array($currentDbFlag, $dbFlags, TRUE)) {
+          echo logEcho(sprintf($lang['notifier']['aircraftWrongDbFlag'], $aircraft['hex']), 'INFO', COLOR_INFO);
+          continue;
+        } else {
+          $text.= sprintf($lang['notifier']['aircraftDbFlag'], DBFLAGS[$currentDbFlag]);
+        }
       }
-      if(!empty($aircraft['desc'])) {
-        $text.= sprintf($lang['notifier']['aircraftDesc'], trim($aircraft['desc']));
-      }
+
+      /**
+       * Show log message, that the aircraft will be notified.
+       */
+      echo logEcho(sprintf($lang['notifier']['newAircraft'], $aircraft['hex']), 'OK', COLOR_OK);
+      $previous[$aircraft['hex']] = time();
       
       /**
        * Check if planespotters picture is requested.

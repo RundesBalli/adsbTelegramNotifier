@@ -6,7 +6,7 @@
 /**
  * Minimum config version
  */
-const MIN_CONFIG_VERSION = 1;
+const MIN_CONFIG_VERSION = 2;
 
 /**
  * Clear screen
@@ -30,4 +30,15 @@ const COLOR_FILE = "\e[38;5;6m";
 const COLOR_INFO = "\e[38;5;3m";
 const COLOR_OK = "\e[38;5;2m";
 const COLOR_RESET = "\e[0m";
+
+/**
+ * dbFlags
+ */
+const DBFLAGS = [
+  0 => 'non special',
+  1 => 'military',
+  2 => 'interesting',
+  4 => 'PIA',
+  8 => 'LADD'
+];
 ?>
