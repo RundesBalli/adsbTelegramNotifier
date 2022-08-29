@@ -49,4 +49,14 @@ $lang['notifier']['aircraftOutOfRange'] = "%s außerhalb vom Überwachungsradius
 $lang['notifier']['aircraftUpdated'] = "%s bereits gesehen, Zeitpunkt der letzten Sichtung aktualisiert.";
 $lang['notifier']['newAircraft'] = "%s neu im Überwachungsradius, wird benachrichtigt.";
 
+// Planespotters API
+$lang['notifier']['planespottersApiCall'] = "Frage Foto bei planespotters.net an.";
+$lang['notifier']['planespottersApiCallSuccessful'] = "Fotoanfrage erfolgreich.";
+$lang['notifier']['planespottersApiCallFailed'] = "Fotoanfrage gescheitert.";
+
+// Telegram message templates
+$lang['notifier']['newAircraftTelegram'] = EMOJI_AIRCRAFT." *Neues Flugzeug gesichtet!*\n\n";
+$lang['notifier']['aircraftLink'] = "Hex: [%s](".$linkToTar1090."/?icao=%s)\n";
+$lang['notifier']['aircraftFlight'] = "Flug: %s\n";
+$lang['notifier']['planespottersNote'] = "\n[Foto](%s) von %s";
 ?>
