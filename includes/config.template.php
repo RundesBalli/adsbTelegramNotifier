@@ -137,6 +137,19 @@ $dbFlags = [
 ];
 
 /**
+ * Skip aircraft without registration
+ * 
+ * Some aircraft are not registered in the database. For these aircraft no assignment "ICAO" => "Registration"
+ * can be made. Only if such an assignment exists, "dbFlags" can be checked. If you use the dbFlags function
+ * from above, it is possible that e.g. small gliders without assignment "ICAO" => "Registration" are still
+ * reported via telegram. To prevent these false messages, enter TRUE here.
+ * 
+ * Note: This data selection is only available, if the readsb decoder has the db-file included (see ReadMe).
+ * If you set this to TRUE without using the db-file, no aircraft will ever be reported.
+ */
+$skipWithoutReg = FALSE;
+
+/**
  * Timeout
  * 
  * This value represents the amount of time (in seconds) that an aircraft must be outside of the observation
@@ -203,5 +216,5 @@ $networkInterface = "";
  * 
  * @var int
  */
-$configVersion = 2;
+$configVersion = 3;
 ?>

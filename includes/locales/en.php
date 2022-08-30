@@ -50,6 +50,7 @@ $lang['notifier']['aircraftWrongDataSource'] = "%s comes from an unwanted data s
 $lang['notifier']['aircraftOutOfRange'] = "%s outside the monitoring radius.";
 $lang['notifier']['aircraftUpdated'] = "%s already seen, time of last sighting updated.";
 $lang['notifier']['aircraftWrongDbFlag'] = "%s has an unwanted dbFlag.";
+$lang['notifier']['aircraftSkipWithoutReg'] = "%s was skipped because no registration could be determined.";
 $lang['notifier']['newAircraft'] = "%s new in the monitoring radius, will be notified.";
 
 // Planespotters API
