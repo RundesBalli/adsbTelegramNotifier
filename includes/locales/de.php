@@ -18,7 +18,8 @@ $lang['done'] = "Fertig.";
  */
 $lang['checkVersion']['skipped'] = "Prüfung auf Aktualisierungen übersprungen. Wird nur alle 15 Minuten geprüft!";
 $lang['checkVersion']['error'] = "Es konnte nicht geprüft werden, ob es eine Aktualisierung gab!";
-$lang['checkVersion']['updateAvailable'] = "Es steht ein Update zur Verfügung!\n\nNavigiere im Terminal in das Verzeichnis des Notifiers und führe `git pull` aus um ein Update durchzuführen.";
+$lang['checkVersion']['notifyAgain'] = "Letzte Aktualisierungsbenachrichtigung vor 3 Tagen. Benachrichtige erneut.";
+$lang['checkVersion']['updateAvailable'] = "Es steht eine Aktualisierung zur Verfügung!\n\nNavigiere im Terminal in das Verzeichnis des Notifiers und führe `git pull` aus um eine Aktualisierung durchzuführen.";
 $lang['checkVersion']['versionOk'] = "Version aktuell.";
 
 /**

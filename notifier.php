@@ -253,12 +253,6 @@ if(!empty($aircrafts)) {
       }
     }
   }
-  /**
-   * Notify the user additionally after the messages.
-   */
-  if(!empty($updateAvailable)) {
-    sendMessageToTelegram(EMOJI_INFO.' '.$lang['checkVersion']['updateAvailable']);
-  }
 }
 
 /**

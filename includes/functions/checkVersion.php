@@ -76,8 +76,14 @@ function checkVersion() {
     /**
      * Versions are different.
      * 
-     * Now it is necessary to check whether the user has already been notified or not.
+     * Now it is necessary to check whether the user has already been notified or not. The user will be
+     * notified again after three days.
      */
+    if(filectime($notifyFile) < (time()-(86400*3))) {
+      echo logEcho($lang['checkVersion']['notifyAgain'], 'INFO', COLOR_INFO);
+      unlink($notifyFile);
+    }
+
     if(!file_exists($notifyFile)) {
       /**
        * The user has not been notified so far.
@@ -92,12 +98,6 @@ function checkVersion() {
       }
       return;
     }
-
-    /**
-     * Notify the user additionally after the messages.
-     */
-    global $updateAvailable;
-    $updateAvailable = TRUE;
   } elseif(file_exists($notifyFile)) {
     unlink($notifyFile);
   }
