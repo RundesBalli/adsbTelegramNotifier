@@ -69,6 +69,13 @@ $linkToTar1090 = "https://globe.adsbexchange.com";
 $planespotters = TRUE;
 
 /**
+ * Skip aircraft when no photograph from planespotters.net is available.
+ * 
+ * @var bool
+ */
+$skipNoPhoto = TRUE;
+
+/**
  * Use Metric
  * 
  * Setting whether metric (TRUE) or aeronautical (FALSE) distances should be displayed and calculated.
@@ -216,5 +223,5 @@ $networkInterface = "";
  * 
  * @var int
  */
-$configVersion = 3;
+$configVersion = 4;
 ?>

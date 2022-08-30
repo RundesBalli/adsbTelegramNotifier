@@ -225,7 +225,7 @@ if(!empty($aircrafts)) {
       if($planespotters == TRUE) {
         echo logEcho($lang['notifier']['planespottersApiCall'], 'INFO', COLOR_INFO);
         $photo = getPlanespottersPhoto($aircraft['hex']);
-        if($photo != FALSE AND is_array($photo)) {
+        if($photo !== FALSE AND is_array($photo)) {
           echo logEcho($lang['notifier']['planespottersApiCallSuccessful'], 'OK', COLOR_OK);
           $textPhoto = sprintf($lang['notifier']['planespottersNote'], $photo['linkToPhoto'], $photo['author']);
 
@@ -240,6 +240,18 @@ if(!empty($aircrafts)) {
           }
         } else {
           echo logEcho($lang['notifier']['planespottersApiCallFailed'], 'WARN', COLOR_WARN);
+        }
+        /**
+         * If no photograph is available and no notification without photograph is wanted, the aircraft is
+         * skipped.
+         * 
+         * To avoid that the aircraft is requested every time again at planespotters.net, it will be marked as
+         * notified.
+         */
+        if($skipNoPhoto === TRUE) {
+          echo logEcho($lang['notifier']['planespottersSkipNoPhoto'], 'WARN', COLOR_WARN);
+          $previous[$aircraft['hex']] = time();
+          continue;
         }
       }
 

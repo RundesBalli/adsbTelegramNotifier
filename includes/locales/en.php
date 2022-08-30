@@ -58,6 +58,7 @@ $lang['notifier']['newAircraft'] = "%s new in the monitoring radius, will be not
 $lang['notifier']['planespottersApiCall'] = "Request photo at planespotters.net.";
 $lang['notifier']['planespottersApiCallSuccessful'] = "Photo request successful.";
 $lang['notifier']['planespottersApiCallFailed'] = "Photo request failed.";
+$lang['notifier']['planespottersSkipNoPhoto'] = "Skip plane as no photo is available.";
 
 // Telegram message templates
 $lang['notifier']['newAircraftTelegram'] = EMOJI_AIRCRAFT." *New aircraft spotted!*\n\n";
