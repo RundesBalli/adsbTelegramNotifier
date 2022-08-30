@@ -206,6 +206,9 @@ if(!empty($aircrafts)) {
           $text.= sprintf($lang['notifier']['aircraftDbFlag'], DBFLAGS[$currentDbFlag]);
         }
       } elseif(empty($aircraft['r']) AND $skipWithoutReg === TRUE) {
+        /**
+         * Skip aircraft, if no registration is available and the skip option is set.
+         */
         echo logEcho(sprintf($lang['notifier']['aircraftSkipWithoutReg'], $aircraft['hex']), 'INFO', COLOR_INFO);
         continue;
       }
