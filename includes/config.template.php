@@ -224,7 +224,24 @@ $networkInterface = "";
 
 /**
  * 
- * DO NOT CHANGE
+ * DO NOT CHANGE ANYTHING BELOW THIS LINE, UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING!
+ * 
+ */
+
+/**
+ * previous.json file
+ * 
+ * Alternative location of the previous.json file created by the script. For example, in a file system mounted
+ * with tmpfs (e.g. /tmp/previous.json).
+ * If empty, the default location is used by the script (root directory of the script).
+ * 
+ * @var string
+ */
+$previousJsonFile = "";
+
+/**
+ * 
+ * DO NOT CHANGE ANYTHING BELOW THIS LINE, EVEN IF YOU KNOW WHAT YOU ARE DOING!
  * 
  */
 
@@ -233,5 +250,5 @@ $networkInterface = "";
  * 
  * @var int
  */
-$configVersion = 5;
+$configVersion = 6;
 ?>

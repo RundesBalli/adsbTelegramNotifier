@@ -64,7 +64,7 @@ if(isset($options['test-telegram'])) {
 /**
  * Read the previous seen aircraft file.
  */
-$previousFile = __DIR__.DIRECTORY_SEPARATOR.'previous.json';
+$previousFile = (!empty($previousJsonFile) ? $previousJsonFile : __DIR__.DIRECTORY_SEPARATOR.'previous.json');
 echo logEcho(sprintf($lang['notifier']['previousFile'], $previousFile), 'FILE', COLOR_FILE);
 if(!file_exists($previousFile)) {
   $previous = [];
