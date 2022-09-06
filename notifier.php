@@ -47,6 +47,21 @@ echo logEcho($lang['notifier']['checkUpdateAvailable'], 'INFO', COLOR_INFO);
 checkVersion();
 
 /**
+ * Send test message to telegram when test parameter is provided and exit.
+ */
+$options = getopt('', ['test-telegram']);
+if(isset($options['test-telegram'])) {
+  echo logEcho($lang['notifier']['sendTestMessage'], 'INFO', COLOR_INFO);
+  if(sendMessageToTelegram(EMOJI_SPEAKER.' '.$lang['sendMessage']['testMessage'])) {
+    echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+  } else {
+    echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+  }
+  echo logEcho($lang['exiting'], 'CRIT', COLOR_CRIT);
+  die();
+}
+
+/**
  * Read the previous seen aircraft file.
  */
 $previousFile = __DIR__.DIRECTORY_SEPARATOR.'previous.json';

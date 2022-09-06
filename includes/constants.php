@@ -19,6 +19,7 @@ const CLEAR_SCREEN = "\e[2J\e[1;1H";
 const EMOJI_AIRCRAFT = "\xF0\x9F\x9B\xA9";
 const EMOJI_INFO = "\xE2\x84\xB9";
 const EMOJI_WARN = "\xE2\x9A\xA0";
+const EMOJI_SPEAKER = "\xF0\x9F\x93\xA2";
 
 /**
  * Colors (Terminal)

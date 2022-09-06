@@ -11,6 +11,7 @@
 $lang['exiting'] = "Beende...";
 $lang['sendMessage']['ok'] = "Senden erfolgreich.";
 $lang['sendMessage']['failed'] = "Senden fehlgeschlagen.";
+$lang['sendMessage']['testMessage'] = "Testnachricht!";
 $lang['done'] = "Fertig.";
 
 /**
@@ -30,6 +31,9 @@ $lang['notifier']['checkConfigVersion'] = "Überprüfe Konfigurationsversion.";
 $lang['notifier']['updateConfig'] = "Die Konfigurationsdatei muss aktualisiert werden. Verwende die aktuelle Konfigurationsdatei aus dem Repository als Grundlage.";
 $lang['notifier']['checkConfigVersionDone'] = "Konfigurationsversion OK.";
 $lang['notifier']['checkUpdateAvailable'] = "Prüfung auf Aktualisierungen.";
+
+// Send test message to telegram
+$lang['notifier']['sendTestMessage'] = "Sende Telegram Testnachricht und beende.";
 
 // previous.json file handling
 $lang['notifier']['previousFile'] = "Datei mit vorher gesehenen Flugzeugen: %s";

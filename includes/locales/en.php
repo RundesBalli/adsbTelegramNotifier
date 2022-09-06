@@ -11,6 +11,7 @@
 $lang['exiting'] = "Exiting...";
 $lang['sendMessage']['ok'] = "Successfully sent.";
 $lang['sendMessage']['failed'] = "Failed to send.";
+$lang['sendMessage']['testMessage'] = "Test Message!";
 $lang['done'] = "Done.";
 
 /**
@@ -30,6 +31,9 @@ $lang['notifier']['checkConfigVersion'] = "Check configuration version.";
 $lang['notifier']['updateConfig'] = "The configuration file needs to be updated. Use the latest configuration file from the repository as a basis.";
 $lang['notifier']['checkConfigVersionDone'] = "Configuration version OK.";
 $lang['notifier']['checkUpdateAvailable'] = "Checking for updates.";
+
+// Send test message to telegram
+$lang['notifier']['sendTestMessage'] = "Send test message to telegram and exit.";
 
 // previous.json file handling
 $lang['notifier']['previousFile'] = "File with previously seen aircrafts: %s";

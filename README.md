@@ -34,6 +34,10 @@ nano includes/config.php
 To test the bot, you can simply run it with PHP in the CLI:  
 `php notifier.php`  
 
+If you just want to know if the telegram chat ID and bot token is correct, you can run:  
+`php notifier.php --test-telegram`  
+It will send a test message to the configured chat ID.
+
 The bot has a detailed output in the CLI, which makes debugging extremely easy:  
 <img src="/screenshots/output.png" alt="Output">  
 
