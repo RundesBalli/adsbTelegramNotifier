@@ -22,7 +22,7 @@ nano includes/config.php
 
 ## Telegram Bot
 1. Create a bot with the [BotFather](https://t.me/BotFather) and note the bot auth token.
-2. Get the Chat-ID: Decide if you want to get notifications via private chat or in a group chat.
+2. Get the chat ID: Decide if you want to get notifications via private chat or in a group chat.
   * Private: Send a message to the [Chat ID Bot](https://t.me/rb_chatId_bot).
   * Group: Invite the [Chat ID Bot](https://t.me/rb_chatId_bot) to your group (can be kicked immediately after that).
 3. Enter the bot auth token and the chat ID in the `includes/config.php`.
