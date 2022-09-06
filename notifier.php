@@ -57,7 +57,7 @@ if(isset($options['test-telegram'])) {
   } else {
     echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
   }
-  echo logEcho($lang['exiting'], 'CRIT', COLOR_CRIT);
+  echo logEcho($lang['exiting'], 'OK', COLOR_OK);
   die();
 }
 
