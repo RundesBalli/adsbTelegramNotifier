@@ -2,7 +2,7 @@
 Notifies via Telegram when an aircraft passes over a certain area.  
 The script gets the data from an existing readsb or dump1090 installation (`aircraft.json`).
 
-<img src="/screenshot.png" alt="Telegram message">  
+<img src="/screenshots/telegramMessage.png" alt="Telegram message">  
 <sub><a href="https://www.planespotters.net/photo/1304779/9m-mub-malaysia-airlines-airbus-a330-223f" title="Photo Source">Photo Source</a></sub>
 
 ## Dependencies
@@ -22,10 +22,20 @@ nano includes/config.php
 
 ## Telegram Bot
 1. Create a bot with the [BotFather](https://t.me/BotFather).
-2. Decide if you want to get notifications via private chat or in a group chat.
+2. Get the Chat-ID: Decide if you want to get notifications via private chat or in a group chat.
   * Private: Send a message to the [Chat ID Bot](https://t.me/rb_chatId_bot).
   * Group: Invite the [Chat ID Bot](https://t.me/rb_chatId_bot) to your group (can be kicked immediately after that).
-3. Enter the chat ID in the `config.php`.
+3. Enter the chat ID in the `includes/config.php`.
+4. Initialize the bot:
+  * Private: you must first send a message to your bot (e.g. /start or click the start button in the bot) to initialize the chat with the bot. Otherwise it will fail until first contact from you (antispam reasons).
+  * Group: You have to invite the bot to your group. Thats it.
+
+## Test the Bot / Debug / Troubleshooting
+To test the bot, you can simply run it with PHP in the CLI:  
+`php notifier.php`  
+
+The bot has a detailed output in the CLI, which makes debugging extremely easy:  
+<img src="/screenshots/output.png" alt="Output">  
 
 ## Cron / automatic notifications
 1. Edit the crontab with `crontab -e`
