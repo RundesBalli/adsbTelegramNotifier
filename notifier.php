@@ -179,9 +179,9 @@ if(!empty($aircrafts)) {
        * Prepare text
        */
       $text = sprintf($lang['notifier']['newAircraftTelegram'], $aircraft['hex']);
-      $text.= sprintf($lang['notifier']['aircraftLink'], $aircraft['hex'], $aircraft['hex']);
+      $text.= sprintf($lang['notifier']['aircraftHexLink'], $aircraft['hex'], $aircraft['hex']);
       if(!empty($aircraft['flight'])) {
-        $text.= sprintf($lang['notifier']['aircraftFlight'], trim($aircraft['flight']));
+        $text.= sprintf($lang['notifier']['aircraftFlightLink'], trim($aircraft['flight']), trim($aircraft['flight']));
       }
 
       /**
@@ -218,7 +218,7 @@ if(!empty($aircrafts)) {
        */
       echo logEcho(sprintf($lang['notifier']['newAircraft'], $aircraft['hex']), 'OK', COLOR_OK);
       $previous[$aircraft['hex']] = time();
-      
+
       /**
        * Check if planespotters picture is requested.
        */

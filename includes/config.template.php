@@ -54,12 +54,22 @@ $aircraftJsonFile = "/run/readsb/aircraft.json";
 /**
  * Link to tar1090
  * 
- * Link to tar1090 or other map services with ICAO hex selection without last forward slash.
- * e.g. http://your-decoder-ip/tar1090 or https://globe.adsbexchange.com
+ * Link to tar1090 or other map services with ICAO hex selection. Use %s for ICAO insertion.
+ * e.g. http://your-decoder-ip/tar1090/?icao=%s or https://globe.adsbexchange.com/?icao=%s
  * 
  * @var string
  */
-$linkToTar1090 = "https://globe.adsbexchange.com";
+$linkToTar1090 = "https://globe.adsbexchange.com/?icao=%s";
+
+/**
+ * Link to flight stats
+ * 
+ * Link to an information service with flightnumber selection. Use %s for flight number insertion.
+ * e.g. https://flightaware.com/live/flight
+ * 
+ * @var string
+ */
+$linkToFlightStats = "https://flightaware.com/live/flight/%s";
 
 /**
  * Use planespotters.net API for photographs.
@@ -223,5 +233,5 @@ $networkInterface = "";
  * 
  * @var int
  */
-$configVersion = 4;
+$configVersion = 5;
 ?>

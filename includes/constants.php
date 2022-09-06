@@ -6,7 +6,7 @@
 /**
  * Minimum config version
  */
-const MIN_CONFIG_VERSION = 4;
+const MIN_CONFIG_VERSION = 5;
 
 /**
  * Clear screen

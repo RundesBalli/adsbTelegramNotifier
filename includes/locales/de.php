@@ -62,8 +62,8 @@ $lang['notifier']['planespottersSkipNoPhoto'] = "Überspringe Flugzeug, da kein 
 
 // Telegram message templates
 $lang['notifier']['newAircraftTelegram'] = EMOJI_AIRCRAFT." *Neues Flugzeug gesichtet!*\n\n";
-$lang['notifier']['aircraftLink'] = "Hex: [%s](".$linkToTar1090."/?icao=%s)\n";
-$lang['notifier']['aircraftFlight'] = "Flug: `%s`\n";
+$lang['notifier']['aircraftHexLink'] = "Hex: [%s](".$linkToTar1090.")\n";
+$lang['notifier']['aircraftFlightLink'] = "Flug: [%s](".$linkToFlightStats.")\n";
 $lang['notifier']['aircraftRegistration'] = "Registrierung: `%s`\n";
 $lang['notifier']['aircraftDesc'] = "\nFlugzeug:\n`%s`\n";
 $lang['notifier']['aircraftDbFlag'] = "\ndbFlag: `%s`\n";
