@@ -178,7 +178,7 @@ if(!empty($aircrafts)) {
       /**
        * Prepare text
        */
-      $text = sprintf($lang['notifier']['newAircraftTelegram'], $aircraft['hex']);
+      $text = sprintf(EMOJI_AIRCRAFT.' '.$lang['notifier']['newAircraftTelegram'], $aircraft['hex']);
       $text.= sprintf($lang['notifier']['aircraftHexLink'], $aircraft['hex'], $aircraft['hex']);
       if(!empty($aircraft['flight'])) {
         $text.= sprintf($lang['notifier']['aircraftFlightLink'], trim($aircraft['flight']), trim($aircraft['flight']));

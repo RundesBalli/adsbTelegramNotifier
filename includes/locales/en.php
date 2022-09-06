@@ -61,7 +61,7 @@ $lang['notifier']['planespottersApiCallFailed'] = "Photo request failed.";
 $lang['notifier']['planespottersSkipNoPhoto'] = "Skip plane as no photo is available.";
 
 // Telegram message templates
-$lang['notifier']['newAircraftTelegram'] = EMOJI_AIRCRAFT." *New aircraft spotted!*\n\n";
+$lang['notifier']['newAircraftTelegram'] = "*New aircraft spotted!*\n\n";
 $lang['notifier']['aircraftHexLink'] = "Hex: [%s](".$linkToTar1090.")\n";
 $lang['notifier']['aircraftFlightLink'] = "Flight: [%s](".$linkToFlightStats.")\n";
 $lang['notifier']['aircraftRegistration'] = "Registration: `%s`\n";
