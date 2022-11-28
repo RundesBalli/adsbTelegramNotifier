@@ -122,7 +122,7 @@ $minAlt = 0;
  * 
  * @var int
  */
-$minAlt = 50000;
+$maxAlt = 50000;
 
 /**
  * Data sources
