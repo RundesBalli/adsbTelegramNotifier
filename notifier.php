@@ -175,6 +175,22 @@ if(!empty($aircrafts)) {
     }
 
     /**
+     * Check if the $minAlt is reached.
+     */
+    if(empty($aircraft['alt_baro']) OR $aircraft['alt_baro'] < $minAlt) {
+      echo logEcho(sprintf($lang['notifier']['aircraftBelowMinAlt'], $aircraft['hex']), 'INFO', COLOR_INFO);
+      continue;
+    }
+
+    /**
+     * Check if the $maxAlt is reached.
+     */
+    if(empty($aircraft['alt_baro']) OR $aircraft['alt_baro'] > $maxAlt) {
+      echo logEcho(sprintf($lang['notifier']['aircraftAboveMaxAlt'], $aircraft['hex']), 'INFO', COLOR_INFO);
+      continue;
+    }
+
+    /**
      * Check if the aircraft was seen before.
      */
     if(array_key_exists($aircraft['hex'], $previous)) {

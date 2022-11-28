@@ -115,6 +115,16 @@ $radius = 7.5;
 $minAlt = 0;
 
 /**
+ * Maximum flight altitude
+ * 
+ * If you only want to be notified about small gliders, the maximum flight altitude can set here. If you want
+ * to be notified about every aircraft, set it to 50000.
+ * 
+ * @var int
+ */
+$minAlt = 50000;
+
+/**
  * Data sources
  * 
  * Only data from these data sources is used.
@@ -250,5 +260,5 @@ $previousJsonFile = "";
  * 
  * @var int
  */
-$configVersion = 6;
+$configVersion = 7;
 ?>
