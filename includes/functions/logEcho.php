@@ -14,7 +14,7 @@
  * 
  * @return string The formatted log string.
  */
-function logEcho(string $text, string $logLevel = "INFO", string $color = COLOR_RESET) {
+function logEcho(string $text, string $logLevel = 'INFO', string $color = COLOR_RESET) {
   return COLOR_RESET.'['.$color.str_pad(strtoupper($logLevel), 4, ' ', STR_PAD_BOTH).COLOR_RESET.'] '.$text."\n";
 }
 ?>

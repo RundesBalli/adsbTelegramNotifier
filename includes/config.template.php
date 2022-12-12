@@ -20,7 +20,7 @@
  * 
  * @var string
  */
-$timezone = "Europe/Berlin";
+$timezone = 'Europe/Berlin';
 
 /**
  * Locale
@@ -31,7 +31,7 @@ $timezone = "Europe/Berlin";
  * 
  * @var string
  */
-$locale = "de";
+$locale = 'de';
 
 
 /**
@@ -49,7 +49,7 @@ $locale = "de";
  * 
  * @var string
  */
-$aircraftJsonFile = "/run/readsb/aircraft.json";
+$aircraftJsonFile = '/run/readsb/aircraft.json';
 
 /**
  * Link to tar1090
@@ -59,7 +59,7 @@ $aircraftJsonFile = "/run/readsb/aircraft.json";
  * 
  * @var string
  */
-$linkToTar1090 = "https://globe.adsbexchange.com/?icao=%s";
+$linkToTar1090 = 'https://globe.adsbexchange.com/?icao=%s';
 
 /**
  * Link to flight stats
@@ -69,7 +69,7 @@ $linkToTar1090 = "https://globe.adsbexchange.com/?icao=%s";
  * 
  * @var string
  */
-$linkToFlightStats = "https://flightaware.com/live/flight/%s";
+$linkToFlightStats = 'https://flightaware.com/live/flight/%s';
 
 /**
  * Use planespotters.net API for photographs.
@@ -199,7 +199,7 @@ $timeout = 3600;
  * 
  * @var string
  */
-$botToken = "";
+$botToken = '';
 
 /**
  * Chat-ID
@@ -209,7 +209,7 @@ $botToken = "";
  * 
  * @var string
  */
-$chatId = "";
+$chatId = '';
 
 /**
  * Disable notification
@@ -229,7 +229,7 @@ $disableNotification = FALSE;
  * 
  * @var string
  */
-$networkInterface = "";
+$networkInterface = '';
 
 
 /**
@@ -247,7 +247,7 @@ $networkInterface = "";
  * 
  * @var string
  */
-$previousJsonFile = "";
+$previousJsonFile = '';
 
 /**
  * 

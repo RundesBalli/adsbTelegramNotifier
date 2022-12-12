@@ -12,7 +12,7 @@
 /**
  * Including the configuration and function loader.
  */
-require_once(__DIR__.DIRECTORY_SEPARATOR."includes".DIRECTORY_SEPARATOR."loader.php");
+require_once(__DIR__.DIRECTORY_SEPARATOR.'includes'.DIRECTORY_SEPARATOR.'loader.php');
 
 /**
  * This script always runs in verbose mode. Therefore its output has to be discarded when using cron.
@@ -73,7 +73,7 @@ if(!file_exists($previousFile)) {
   if(filesize($previousFile) == 0) {
     $previous = [];
     unlink($previousFile);
-    echo logEcho($lang['notifier']['previousFileEmpty'], "WARN", COLOR_WARN);
+    echo logEcho($lang['notifier']['previousFileEmpty'], 'WARN', COLOR_WARN);
   } else {
     $fp = fopen($previousFile, 'r');
     $previous = json_decode(fread($fp, filesize($previousFile)), TRUE);

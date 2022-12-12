@@ -8,22 +8,22 @@
 /**
  * Basic configuration
  */
-require_once(__DIR__.DIRECTORY_SEPARATOR."config.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."timezone.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."constants.php");
+require_once(__DIR__.DIRECTORY_SEPARATOR.'config.php');
+require_once(__DIR__.DIRECTORY_SEPARATOR.'timezone.php');
+require_once(__DIR__.DIRECTORY_SEPARATOR.'constants.php');
 
 /**
  * Locale selected in the configuration
  */
-require_once(__DIR__.DIRECTORY_SEPARATOR."locales".DIRECTORY_SEPARATOR.$locale.".php");
+require_once(__DIR__.DIRECTORY_SEPARATOR.'locales'.DIRECTORY_SEPARATOR.$locale.'.php');
 
 /**
  * Functions
  */
-require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."logEcho.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."openingArt.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."sendMessageToTelegram.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."checkVersion.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."getPlanespottersPhoto.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."functions".DIRECTORY_SEPARATOR."sendPhotoToTelegram.php");
+require_once(__DIR__.DIRECTORY_SEPARATOR.'functions'.DIRECTORY_SEPARATOR.'logEcho.php');
+require_once(__DIR__.DIRECTORY_SEPARATOR.'functions'.DIRECTORY_SEPARATOR.'openingArt.php');
+require_once(__DIR__.DIRECTORY_SEPARATOR.'functions'.DIRECTORY_SEPARATOR.'sendMessageToTelegram.php');
+require_once(__DIR__.DIRECTORY_SEPARATOR.'functions'.DIRECTORY_SEPARATOR.'checkVersion.php');
+require_once(__DIR__.DIRECTORY_SEPARATOR.'functions'.DIRECTORY_SEPARATOR.'getPlanespottersPhoto.php');
+require_once(__DIR__.DIRECTORY_SEPARATOR.'functions'.DIRECTORY_SEPARATOR.'sendPhotoToTelegram.php');
 ?>

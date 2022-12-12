@@ -89,7 +89,7 @@ function checkVersion() {
        * The user has not been notified so far.
        */
       echo logEcho($lang['checkVersion']['updateAvailable'], 'INFO', COLOR_INFO);
-      $fp = fopen($notifyFile, "w+");
+      $fp = fopen($notifyFile, 'w+');
       fclose($fp);
       if(sendMessageToTelegram(EMOJI_INFO.' '.$lang['checkVersion']['updateAvailable'])) {
         echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
