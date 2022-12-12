@@ -72,6 +72,17 @@ $linkToTar1090 = 'https://globe.adsbexchange.com/?icao=%s';
 $linkToFlightStats = 'https://flightaware.com/live/flight/%s';
 
 /**
+ * Link to Maps
+ * 
+ * Link to a map tool of your choice. The first string is latitude, the second is longitude.
+ * If no link but only the coordinates should be posted, just leave this field empty.
+ * e.g. https://www.google.com/maps/place/%s,%s
+ * 
+ * @var string
+ */
+$linkToMaps = 'https://www.google.com/maps/place/%s,%s';
+
+/**
  * Use planespotters.net API for photographs.
  * 
  * @var bool
@@ -173,6 +184,8 @@ $dbFlags = [
  * 
  * Note: This data selection is only available, if the readsb decoder has the db-file included (see ReadMe).
  * If you set this to TRUE without using the db-file, no aircraft will ever be reported.
+ * 
+ * @var bool
  */
 $skipWithoutReg = FALSE;
 
@@ -182,8 +195,33 @@ $skipWithoutReg = FALSE;
  * This value represents the amount of time (in seconds) that an aircraft must be outside of the observation
  * radius before its re-entry will be reported again.
  * e.g. 3600 (1 hour)
+ * 
+ * @var int
  */
 $timeout = 3600;
+
+/**
+ * Show coordinates and map link in notification.
+ * 
+ * @var bool
+ */
+$showCoordinates = FALSE;
+
+/**
+ * Show altitude in notification.
+ * 
+ * @var bool
+ */
+$showAlt = FALSE;
+
+/**
+ * Altitude type
+ * 
+ * alt_baro or alt_geom
+ * 
+ * @var string
+ */
+$altType = 'alt_baro';
 
 
 /**
@@ -260,5 +298,5 @@ $previousJsonFile = '';
  * 
  * @var int
  */
-$configVersion = 7;
+$configVersion = 8;
 ?>

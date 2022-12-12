@@ -245,6 +245,38 @@ if(!empty($aircrafts)) {
       }
 
       /**
+       * Check if the coordinates are available and should be posted.
+       */
+      if((!empty($aircraft['lastPosition']) OR (!empty($aircraft['lat']) AND !empty($aircraft['lon']))) AND $showCoordinates === TRUE) {
+        if(!empty($aircraft['lat']) AND !empty($aircraft['lon'])) {
+          $lat = $aircraft['lat'];
+          $lon = $aircraft['lon'];
+        } else {
+          $lat = $aircraft['lastPosition']['lat'];
+          $lon = $aircraft['lastPosition']['lon'];
+        }
+
+        if(!empty($linkToMaps)) {
+          /**
+           * A map link should be posted.
+           */
+          $text.= sprintf($lang['notifier']['aircraftCoordinatesLinked'], $lat, $lon, sprintf($linkToMaps, $lat, $lon));
+        } else {
+          /**
+           * No map link should be posted.
+           */
+          $text.= sprintf($lang['notifier']['aircraftCoordinates'], $lat, $lon);
+        }
+      }
+
+      /**
+       * Check if the altitude is available and should be posted.
+       */
+      if(!empty($aircraft[$altType]) AND $showAlt === TRUE) {
+        $text.= sprintf($lang['notifier']['aircraftAlt'], number_format(($useMetric ? ($aircraft[$altType]/3.28084) : $aircraft[$altType]), 0, '.', '.'), ($useMetric ? 'm' : 'ft'));
+      }
+
+      /**
        * Show log message, that the aircraft will be notified.
        */
       echo logEcho(sprintf($lang['notifier']['newAircraft'], $aircraft['hex']), 'OK', COLOR_OK);

@@ -73,5 +73,8 @@ $lang['notifier']['aircraftFlightLink'] = 'Flug: [%s]('.$linkToFlightStats.")\n"
 $lang['notifier']['aircraftRegistration'] = "Registrierung: `%s`\n";
 $lang['notifier']['aircraftDesc'] = "\nFlugzeug:\n`%s`\n";
 $lang['notifier']['aircraftDbFlag'] = "\ndbFlag: `%s`\n";
+$lang['notifier']['aircraftCoordinates'] = "Koordinaten: %s, %s\n";
+$lang['notifier']['aircraftCoordinatesLinked'] = "Koordinaten: [%s, %s](%s)\n";
+$lang['notifier']['aircraftAlt'] = "Höhe: %s%s\n";
 $lang['notifier']['planespottersNote'] = "\n[Foto](%s) von %s";
 ?>
