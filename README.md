@@ -5,6 +5,7 @@ The script gets the data from an existing readsb or dump1090 installation (`airc
 <img src="/screenshots/telegramMessage.png" alt="Telegram message">  
 <sub><a href="https://www.planespotters.net/photo/1304779/9m-mub-malaysia-airlines-airbus-a330-223f" title="Photo Source">Photo Source</a></sub>
 
+
 When the (`aircraft.json`) don't contain the distance to the ADS-B station but do contain the position of the aircraft the distance can be calculated by providing the base station coordinates in the config file.
 
 ## Dependencies
