@@ -273,7 +273,7 @@ if(!empty($aircrafts)) {
        * Check if the altitude is available and should be posted.
        */
       if(!empty($aircraft[$altType]) AND $showAlt === TRUE) {
-        $text.= sprintf($lang['notifier']['aircraftAlt'], number_format(($useMetric ? ($aircraft[$altType]/3.28084) : $aircraft[$altType]), 0, '.', '.'), ($useMetric ? 'm' : 'ft'));
+        $text.= sprintf($lang['notifier']['aircraftAlt'], number_format(($useMetric ? ($aircraft[$altType]/3.28084) : $aircraft[$altType]), 0, $lang['decimalSeparator'], $lang['thousandsSeparator']), ($useMetric ? 'm' : 'ft'));
       }
 
       /**

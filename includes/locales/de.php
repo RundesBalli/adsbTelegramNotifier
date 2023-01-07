@@ -13,6 +13,8 @@ $lang['sendMessage']['ok'] = 'Senden erfolgreich.';
 $lang['sendMessage']['failed'] = 'Senden fehlgeschlagen.';
 $lang['sendMessage']['testMessage'] = 'Testnachricht!';
 $lang['done'] = 'Fertig.';
+$lang['decimalSeparator'] = ',';
+$lang['thousandsSeparator'] = '.';
 
 /**
  * includes/functions/checkVersion.php
