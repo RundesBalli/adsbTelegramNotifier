@@ -72,5 +72,10 @@ DECODER_OPTIONS="--max-range 450 --write-json-every 1 --db-file /usr/local/share
 Restart readsb:  
 `sudo systemctl restart readsb`
 
+## Docker
+Create docker image
+
+`docker build -t adsbtelegramnotify .`
+
 ## Contribute
 If you want to contribute to the project, you are welcome to do the translations into your local language. But no matter what you want to contribute, just send a PR and I'll take a look at it.
