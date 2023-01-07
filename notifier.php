@@ -62,6 +62,15 @@ if(isset($options['test-telegram'])) {
 }
 
 /**
+ * Check if the radius in the configuration file was entered in kilometers or nautical miles.
+ * If the value was entered in kilometers, it must be converted to nautical miles, since readsb gives
+ * distances in nautical miles.
+ */
+if($useMetric !== FALSE) {
+  $radius = $radius*0.539956803;
+}
+
+/**
  * Read the previous seen aircraft file.
  */
 $previousFile = (!empty($previousJsonFile) ? $previousJsonFile : __DIR__.DIRECTORY_SEPARATOR.'previous.json');
@@ -106,15 +115,6 @@ if(!empty($previous)) {
   } else {
     echo logEcho($lang['notifier']['noDeletedAircrafts'], 'OK', COLOR_OK);
   }
-}
-
-/**
- * Check if the radius in the configuration file was entered in kilometers or nautical miles.
- * If the value was entered in kilometers, it must be converted to nautical miles, since readsb gives
- * distances in nautical miles.
- */
-if($useMetric !== FALSE) {
-  $radius = $radius*0.539956803;
 }
 
 /**
