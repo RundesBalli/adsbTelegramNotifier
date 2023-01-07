@@ -50,11 +50,11 @@ function checkVersion() {
    * Error handling.
    */
   if(curl_errno($ch) != 0 OR curl_getinfo($ch, CURLINFO_RESPONSE_CODE) != 200) {
-    echo logEcho($lang['checkVersion']['error'], 'WARN', COLOR_WARN);
+    fwrite(STDERR, logEcho($lang['checkVersion']['error'], 'WARN', COLOR_WARN));
     if(sendMessageToTelegram(EMOJI_WARN.' '.$lang['checkVersion']['error'])) {
       echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
     } else {
-      echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+      fwrite(STDERR, logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN));
     }
     return;
   }
@@ -94,7 +94,7 @@ function checkVersion() {
       if(sendMessageToTelegram(EMOJI_INFO.' '.$lang['checkVersion']['updateAvailable'])) {
         echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
       } else {
-        echo logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN);
+        fwrite(STDERR, logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN));
       }
       return;
     }

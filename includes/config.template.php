@@ -272,6 +272,22 @@ $networkInterface = '';
 
 /**
  * 
+ * Service configuration
+ * 
+ * IF YOU UPTATED RECENTLY TO THIS NEW VERSION, YOU HAVE TO DISABLE THE SCRIPT IN THE CRON! crontab -e
+ * 
+ */
+
+/**
+ * Run every $runEvery seconds.
+ * 
+ * As the script runs as a systemd service, this can be used to determine the time between runs in seconds.
+ */
+$runEvery = 30;
+
+
+/**
+ * 
  * DO NOT CHANGE ANYTHING BELOW THIS LINE, UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING!
  * 
  */
@@ -298,5 +314,5 @@ $previousJsonFile = '';
  * 
  * @var int
  */
-$configVersion = 8;
+$configVersion = 9;
 ?>

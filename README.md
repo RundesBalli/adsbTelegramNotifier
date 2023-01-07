@@ -19,6 +19,7 @@ cd adsbTelegramNotifier
 mv includes/config.template.php includes/config.php
 nano includes/config.php
 ```
+**Update in version 2:** This notifier is now run via a systemd service, not by cron anymore!
 
 ## Telegram Bot
 1. Create a bot with the [BotFather](https://t.me/BotFather) and note the bot auth token.
@@ -32,22 +33,26 @@ nano includes/config.php
 
 ## Test the Bot / Debug / Troubleshooting
 To test the bot, you can simply run it with PHP in the CLI:  
-`php notifier.php`  
+`php notifier.php` (CTRL+C to exit)
 
 If you just want to know if the telegram chat ID and bot token is correct, you can run:  
 `php notifier.php --test-telegram`  
 It will send a test message to the configured chat ID.
 
-The bot has a detailed output in the CLI, which makes debugging extremely easy:  
+The bot has a detailed output in the CLI, which makes debugging extremely easy. When the script is run as a service, the standard output will be discarded and only the critical and warning error messages will be logged.  
 <img src="/screenshots/output.png" alt="Output">  
 
-## Cron / automatic notifications
-1. Edit the crontab with `crontab -e`
-2. Enter a new line with the following contents:  
-`* * * * * /usr/bin/php /path/to/your/notifier.php >/dev/null 2>&1`  
-Don't forget to edit the path and to add a new line at the end of the crontab. Make sure, that you have the `>/dev/null 2>&1` at the end of the line, or the script will spam your systemlog.
-3. If you don't want to get notifications every minute around the clock, you can simply edit the crontab times with the [crontab generator](https://crontab-generator.org/). If you only want notifications between 5 and 16 o'clock (5am to 4pm) and only Monday to Friday, you can use `* 5-16 * * 1-5`
-4. Note: The update check is only executed every 15 minutes (0, 15, 30, 45)! So if you dont execute the notifier every minute, you have to check for updates yourself!
+## Automatic notifications
+1. Get the full directory:  
+`pwd`
+2. Edit the `ExecStart`-path in the service file:  
+`nano adsbTelegramNotifier.service`
+3. Create a systemlink to the service file:  
+`sudo ln -s /path/to/adsbTelegramNotifier/adsbTelegramNotifier.service /etc/systemd/system/adsbTelegramNotifier.service`
+4. Enable and start the service:  
+`sudo systemctl enable adsbTelegramNotifier && sudo systemctl start adsbTelegramNotifier`
+5. Check if the service has started:  
+`sudo systemctl status adsbTelegramNotifier`
 
 ## More information (readsb/tar1090 only)
 The default setup shows the HEX Code (ICAO) and the Flightnumber/Callsign if available.  

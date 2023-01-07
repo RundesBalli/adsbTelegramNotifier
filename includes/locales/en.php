@@ -79,4 +79,9 @@ $lang['notifier']['aircraftCoordinates'] = "Coordinates: %s, %s\n";
 $lang['notifier']['aircraftCoordinatesLinked'] = "Coordinates: [%s, %s](%s)\n";
 $lang['notifier']['aircraftAlt'] = "Altitude: %s%s\n";
 $lang['notifier']['planespottersNote'] = "\n[Photo](%s) by %s";
+
+/**
+ * Execution time
+ */
+$lang['notifier']['executionTime'] = 'Execution time: ';
 ?>
