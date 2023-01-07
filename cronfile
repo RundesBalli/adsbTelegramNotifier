@@ -1,0 +1,1 @@
+* * * * * /usr/local/bin/php /usr/src/myapp/notifier.php > /proc/1/fd/1 2>&1

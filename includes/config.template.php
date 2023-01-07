@@ -12,6 +12,18 @@
  */
 
 /**
+ * Base station location
+ *
+ * When the aircraft.json don't contain the distance from the base station we can calculate it based
+ * on the location provided
+ * e.g.  -23.70132930423978 and 28.442266675589366
+ *
+ * @var float
+ */
+$stationlat = -23.70132930423978;
+$stationlon = 28.442266675589366;
+
+/**
  * Timezone
  * 
  * The timezone to be used in the notifications. Use the "TZ database name" from the list linked below:

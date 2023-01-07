@@ -1,0 +1,11 @@
+version: "2.1"
+services:
+  adsbtelegramnotify:
+    image: adsbtelegramnotify:latest
+    container_name: adsbtelegramnotify
+    environment:
+      - TZ=Africa/Johannesburg
+    volumes:
+      - /opt/adsbtelegramnotify/config.php:/usr/src/myapp/includes/config.php:ro
+      - /opt/adsbtelegramnotify/dump1090-fa/:/run/readsb/:ro
+    restart: unless-stopped

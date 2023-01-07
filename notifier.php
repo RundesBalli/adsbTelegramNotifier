@@ -169,6 +169,28 @@ if(!empty($aircrafts)) {
     /**
      * Check if the distance from the aircraft to the station is within the configured radius.
      */
+    if(empty($aircraft['r_dst']))
+    {
+      if(!empty($aircraft['lat']))
+      {
+        /* Let's calculate the distance */
+        $rad = M_PI / 180;
+        $lat1 = $aircraft['lat'];
+        $lon1 = $aircraft['lon'];
+
+        $lat2 = $stationlat;
+        $lon2 = $stationlon;
+
+        $r_dst =  acos(sin($lat2*$rad) * sin($lat1*$rad) + cos($lat2*$rad) * cos($lat1*$rad) * cos($lon2*$rad - $lon1*$rad)) * 6371;// Kilometers
+
+        if($useMetric !== FALSE) {
+          $r_dst = $r_dst * 0.539956803;
+        }
+        $aircraft['r_dst'] = $r_dst;
+        echo logEcho(sprintf($lang['notifier']['aircraftCalcDistance'], $aircraft['r_dst']), 'INFO', COLOR_INFO);
+       }
+    }
+
     if(empty($aircraft['r_dst']) OR (!is_numeric($aircraft['r_dst']) OR $aircraft['r_dst'] > $radius)) {
       echo logEcho(sprintf($lang['notifier']['aircraftOutOfRange'], $aircraft['hex']), 'INFO', COLOR_INFO);
       continue;
@@ -273,7 +295,7 @@ if(!empty($aircrafts)) {
        * Check if the altitude is available and should be posted.
        */
       if(!empty($aircraft[$altType]) AND $showAlt === TRUE) {
-        $text.= sprintf($lang['notifier']['aircraftAlt'], number_format(($useMetric ? ($aircraft[$altType]/3.28084) : $aircraft[$altType]), 0, '.', '.'), ($useMetric ? 'm' : 'ft'));
+        $text.= sprintf($lang['notifier']['aircraftAlt'], number_format(($useMetric ? ($aircraft[$altType]/3.28084) : $aircraft[$altType]), 0, '.'), ($useMetric ? 'm' : 'ft'));
       }
 
       /**

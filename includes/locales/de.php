@@ -59,6 +59,7 @@ $lang['notifier']['aircraftUpdated'] = '%s bereits gesehen, Zeitpunkt der letzte
 $lang['notifier']['aircraftWrongDbFlag'] = '%s hat ein unerwünschtes dbFlag.';
 $lang['notifier']['aircraftSkipWithoutReg'] = '%s wurde übersprungen, da keine Registrierung ermittelt werden konnte.';
 $lang['notifier']['newAircraft'] = '%s neu im Überwachungsradius, wird benachrichtigt.';
+$lang['notifier']['aircraftCalcDistance'] = 'Berechnete Distanz %s.';
 
 // Planespotters API
 $lang['notifier']['planespottersApiCall'] = 'Frage Foto bei planespotters.net an.';
