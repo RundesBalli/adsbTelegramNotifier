@@ -369,7 +369,7 @@ while(1) {
    */
   $executionTime = microtime(true)-$microtimeStart;
   echo $lang['notifier']['executionTime'].round($executionTime*1000, 1)." ms\n-------------------------------------------------------------\n";
-  $usleep = ($runEvery*1000000)-$executionTime;
+  $usleep = intval(floor(($runEvery*1000000)-$executionTime));
   if($usleep <= 0) {
     continue;
   } else {
