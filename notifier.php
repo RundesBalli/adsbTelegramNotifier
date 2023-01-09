@@ -67,7 +67,7 @@ if($useMetric !== FALSE) {
 /**
  * Count runs
  */
-$run = 0;
+$runs = 0;
 
 /**
  * Loop everything, because it runs as a systemd service.
