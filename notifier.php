@@ -232,7 +232,7 @@ while(1) {
          */
         $text = sprintf(EMOJI_AIRCRAFT.' '.$lang['notifier']['newAircraftTelegram'], $aircraft['hex']);
         $text.= sprintf($lang['notifier']['aircraftHexLink'], $aircraft['hex'], $aircraft['hex']);
-        if(!empty($aircraft['flight'])) {
+        if(!empty($aircraft['flight']) AND !empty(trim($aircraft['flight']))) {
           $text.= sprintf($lang['notifier']['aircraftFlightLink'], trim($aircraft['flight']), trim($aircraft['flight']));
         }
 
