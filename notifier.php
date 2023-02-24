@@ -189,6 +189,7 @@ while(1) {
 
       /**
        * Check if the distance from the aircraft to the station is within the configured radius.
+       * If no r_dst is provided, there are no coordinates available.
        */
       if(empty($aircraft['r_dst']) OR (!is_numeric($aircraft['r_dst']) OR $aircraft['r_dst'] > $radius)) {
         echo logEcho(sprintf($lang['notifier']['aircraftOutOfRange'], $aircraft['hex']), 'INFO', COLOR_INFO);
