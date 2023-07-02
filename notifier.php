@@ -65,9 +65,10 @@ if($useMetric !== FALSE) {
 }
 
 /**
- * Count runs
+ * Count runs and errors
  */
 $runs = 0;
+$errors = 0;
 
 /**
  * Loop everything, because it runs as a systemd service.
@@ -161,10 +162,15 @@ while(1) {
    */
   if(!is_array($aircrafts)) {
     fwrite(STDERR, logEcho($lang['notifier']['aircraftJsonDataFailed'], 'CRIT', COLOR_CRIT));
-    if(sendMessageToTelegram(EMOJI_WARN.' '.$lang['notifier']['aircraftJsonDataFailed'])) {
-      echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+    $errors++;
+    if($errors >= 3) {
+      if(sendMessageToTelegram(EMOJI_WARN.' '.$lang['notifier']['aircraftJsonDataFailed'])) {
+        echo logEcho($lang['sendMessage']['ok'], 'OK', COLOR_OK);
+      } else {
+        fwrite(STDERR, logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN));
+      }
     } else {
-      fwrite(STDERR, logEcho($lang['sendMessage']['failed'], 'WARN', COLOR_WARN));
+      continue;
     }
     fwrite(STDERR, logEcho($lang['exiting'], 'CRIT', COLOR_CRIT));
     die();
